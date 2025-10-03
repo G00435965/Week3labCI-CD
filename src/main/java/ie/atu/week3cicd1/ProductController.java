@@ -9,7 +9,8 @@ import java.util.List;
 
 @RequestMapping("/product")
 @RestController
-public class ProductController {
+public class ProductController
+{
     List<Product> myList = new ArrayList<>();
 
     @GetMapping("/hello")
@@ -18,15 +19,16 @@ public class ProductController {
     }
 
 
-    @GetMapping("/getproduct")
-    public Product getProduct() {
+    @GetMapping("/getproducts")
+    public List<Product> getProducts()
+    {
         Product myProduct = new Product("TV", 499);
-        return myProduct;
+        return myList;
     }
 
     @PostMapping("/addProduct")
-    public Product addProduct(@RequestBody Product myProduct) {
-
+    public Product addProduct(@RequestBody Product myProduct)
+    {
         myList.add(myProduct);
         return myProduct;
     }
