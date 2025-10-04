@@ -3,6 +3,7 @@ package ie.atu.week3cicd1;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 //@Data generates all the getters and setters using Lombok
@@ -10,7 +11,8 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Product {
-    @NotBlank //
+    @NotBlank //Basically you cant submit a blank name for the product
+    @Size(min = 1, max = 9, message = "Product must be between 1 and 9 characters")
 
     private String productName;
     @Positive
